@@ -1,18 +1,8 @@
 import { Link, useLoaderData } from "remix";
 import db from "~/db/db.server.js";
-import RecipesStylesUrl from "~/styles/Recipes.css";
 
 export async function loader() {
   return db.data.recipes;
-}
-
-export function links() {
-  return [
-    {
-      rel: "stylesheet",
-      href: RecipesStylesUrl,
-    },
-  ];
 }
 
 export default function PostItems() {
@@ -20,19 +10,31 @@ export default function PostItems() {
 
   return (
     <div>
-      <div className="page-header">
-        <h1>Recipes</h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="main-heading">Recipes</h1>
         <Link to="/recipes/new" className="btn">
           New recipe
         </Link>
       </div>
-      <ul className="recipe-list">
+      <ul className="flex flex-row flex-wrap gap-4">
         {recipes.map((recipe) => (
-          <li className="recipe-item" key={recipe.id}>
+          <li
+            className="bg-stone-700 px-8 py-4 rounded-md w-96"
+            key={recipe.id}
+          >
             <Link to={recipe.id}>
-              <h3>{recipe.title}</h3>
-              <img className="img" src={recipe.img} style={{width:"100%", height:"200px", objectFit:"cover", borderRadius:"px"}} ></img>
-              <p className="page-content">Author: {recipe.author}</p>
+              <h3 className="mb-2">{recipe.title}</h3>
+              <img
+                className="img"
+                src={recipe.img}
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                  borderRadius: "px",
+                }}
+              ></img>
+              <p className="mt-2">Author: {recipe.author}</p>
             </Link>
           </li>
         ))}
