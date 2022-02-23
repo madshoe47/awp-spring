@@ -21,6 +21,8 @@ export default function PostItems() {
           <li key={recipe.id}>
             <Link to={recipe.id}>
               <h3>{recipe.title}</h3>
+              <img src={recipe.img} style={{width:"100%", height:"200px", objectFit:"cover", borderRadius:"8px"}} ></img>
+              <p className="page-content">Author: {recipe.author}</p>
             </Link>
           </li>
         ))}

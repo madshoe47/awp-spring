@@ -3,22 +3,53 @@
     {
       "id": "1",
       "title": "Spaghetti",
-      "body": "This is test post #1"
+      "body": "This is test post #1",
+      "seperatedIngredients": [
+        "apples",
+        " cinamon",
+        " dough"
+      ],
+      "author": "Kasia",
+      "img": "https://ocdn.eu/pulscms-transforms/1/iGxk9kpTURBXy8wYTQ2YmY1M2NlYTVlMTM2NWU2MjdiMmRjODExZTUxZi5qcGeTlQMAH80D6M0CMpMJpjA2NTMzYgaTBc0EsM0CdoGhMAE/spaghetti-puttanesca.jpg"
     },
     {
       "id": "2",
       "title": "Muffins",
-      "body": "This is test post #2"
+      "body": "This is test post #2",
+      "seperatedIngredients": [
+        "flour",
+        " eggs",
+        " milk",
+        "chocolate"
+      ],
+      "author": "Kasia",
+      "img": "https://www.valdemarsro.dk/wp-content/2021/01/vaniljemuffins.jpg"
     },
     {
       "id": "3",
       "title": "Tomato Soup",
-      "body": "This is test post #3"
+      "body": "This soup is everything I want tomato soup to be! It’s rich and creamy, yet doesn’t weigh me down. It’s bursting with amazing tomato flavor, yet it’s made from canned tomatoes.",
+      "seperatedIngredients": [
+        "tomatos",
+        " peper",
+        " salt",
+        "onion",
+        "olive oil"
+      ],
+      "author": "Kasia",
+      "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
     },
     {
       "id": "17f259f2ef0",
       "title": "Lasagne",
-      "body": "This is lasagne"
+      "body": "This is lasagne",
+      "seperatedIngredients": [
+        "tomatos",
+        " lasagne pasta",
+        " meat"
+      ],
+      "author": "Magda",
+      "img": "https://images.unsplash.com/photo-1614961909013-1e2212a2ca87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
     },
     {
       "id": "17f25a5e53a",
@@ -28,7 +59,21 @@
         "apples",
         " cinamon",
         " dough"
-      ]
+      ],
+      "author": "Magda",
+      "img": "https://images.unsplash.com/photo-1587248720327-8eb72564be1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": "17f25e97ee3",
+      "title": "Curry Ramen",
+      "body": "Curry",
+      "seperatedIngredients": [
+        "ramen pasta",
+        " curry",
+        " coconut milk"
+      ],
+      "author": "Magda",
+      "img": "https://www.kwestiasmaku.com/sites/v123.kwestiasmaku.com/files/curry_ramen_01.jpg"
     }
   ]
 }

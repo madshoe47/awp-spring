@@ -33,6 +33,7 @@ export default function Recipe() {
           Back
         </Link>
       </div>
+      <img src={recipe.img} style={{width:"100%", height:"200px", objectFit:"cover"}} ></img>
       <h2>Description</h2>
       <p className="page-content">{recipe.body}</p>
       <h2>Ingredients</h2>
@@ -44,6 +45,8 @@ export default function Recipe() {
               </li>
           )
         })}</ul>
+        <h2>Author</h2>
+        <p className="page-content">{recipe.author}</p>
       <div className="page-footer">
         <form method="post">
           <input type="hidden" name="_method" value="delete" />
