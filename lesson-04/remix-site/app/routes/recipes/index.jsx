@@ -2,25 +2,25 @@ import { Link, useLoaderData } from "remix";
 import db from "~/db/db.server.js";
 
 export async function loader() {
-  return db.data.posts;
+  return db.data.recipes;
 }
 
 export default function PostItems() {
-  const posts = useLoaderData();
+  const recipes = useLoaderData();
 
   return (
     <div>
       <div className="page-header">
-        <h1>Posts</h1>
-        <Link to="/posts/new" className="btn">
-          New post
+        <h1>Recipes</h1>
+        <Link to="/recipes/new" className="btn">
+          New recipe
         </Link>
       </div>
       <ul className="posts-list">
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link to={post.id}>
-              <h3>{post.title}</h3>
+        {recipes.map((recipe) => (
+          <li key={recipe.id}>
+            <Link to={recipe.id}>
+              <h3>{recipe.title}</h3>
             </Link>
           </li>
         ))}

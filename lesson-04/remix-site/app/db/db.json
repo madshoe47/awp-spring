@@ -1,19 +1,34 @@
 {
-  "posts": [
+  "recipes": [
     {
       "id": "1",
-      "title": "Post 1",
+      "title": "Spaghetti",
       "body": "This is test post #1"
     },
     {
       "id": "2",
-      "title": "Post 2",
+      "title": "Muffins",
       "body": "This is test post #2"
     },
     {
       "id": "3",
-      "title": "Post 3",
+      "title": "Tomato Soup",
       "body": "This is test post #3"
+    },
+    {
+      "id": "17f259f2ef0",
+      "title": "Lasagne",
+      "body": "This is lasagne"
+    },
+    {
+      "id": "17f25a5e53a",
+      "title": "Apple pie",
+      "body": "Apple pie",
+      "seperatedIngredients": [
+        "apples",
+        " cinamon",
+        " dough"
+      ]
     }
   ]
 }
