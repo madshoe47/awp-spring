@@ -1,6 +1,8 @@
 import { Outlet } from "remix";
 
-export default function Posts() {
+
+
+export default function Recipes() {
   return (
     <>
       <Outlet />
