@@ -1,5 +1,15 @@
 import { Link, redirect } from "remix";
 import db from "~/db/db.server";
+import NewRecipeStylesUrl from "~/styles/NewRecipe.css";
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: NewRecipeStylesUrl,
+    },
+  ];
+}
 
 export const action = async ({ request }) => {
   const form = await request.formData();
@@ -47,7 +57,7 @@ export default function NewRecipe() {
             <label htmlFor="img">Picture URL</label>
             <input type="text" name="img" id="img" />
           </div>
-          <button className="btn btn-block" type="submit">
+          <button className=" btn btn-block" type="submit">
             Add Recipe
           </button>
         </form>

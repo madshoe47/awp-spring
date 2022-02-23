@@ -1,8 +1,18 @@
 import { Link, useLoaderData } from "remix";
 import db from "~/db/db.server.js";
+import RecipesStylesUrl from "~/styles/Recipes.css";
 
 export async function loader() {
   return db.data.recipes;
+}
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: RecipesStylesUrl,
+    },
+  ];
 }
 
 export default function PostItems() {
@@ -16,12 +26,12 @@ export default function PostItems() {
           New recipe
         </Link>
       </div>
-      <ul className="posts-list">
+      <ul className="recipe-list">
         {recipes.map((recipe) => (
-          <li key={recipe.id}>
+          <li className="recipe-item" key={recipe.id}>
             <Link to={recipe.id}>
               <h3>{recipe.title}</h3>
-              <img src={recipe.img} style={{width:"100%", height:"200px", objectFit:"cover", borderRadius:"8px"}} ></img>
+              <img className="img" src={recipe.img} style={{width:"100%", height:"200px", objectFit:"cover", borderRadius:"px"}} ></img>
               <p className="page-content">Author: {recipe.author}</p>
             </Link>
           </li>

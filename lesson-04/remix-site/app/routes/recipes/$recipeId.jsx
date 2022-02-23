@@ -1,6 +1,7 @@
 import { Link, redirect } from "remix";
 import { useLoaderData } from "remix";
 import db from "~/db/db.server";
+import RecipeStylesUrl from "~/styles/Recipe.css";
 
 export const loader = async function ({ params }) {
   const recipe = db.data.recipes.find((p) => p.id === params.recipeId);
@@ -22,6 +23,15 @@ export const action = async function ({ request, params }) {
   }
 };
 
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: RecipeStylesUrl,
+    },
+  ];
+}
+
 export default function Recipe() {
   const { recipe } = useLoaderData();
 
@@ -33,20 +43,24 @@ export default function Recipe() {
           Back
         </Link>
       </div>
-      <img src={recipe.img} style={{width:"100%", height:"200px", objectFit:"cover"}} ></img>
-      <h2>Description</h2>
-      <p className="page-content">{recipe.body}</p>
-      <h2>Ingredients</h2>
-      <ul className="page-content">
-        {recipe.seperatedIngredients.map((ingredient) => {
-            return (
-              <li>
-                {ingredient}
-              </li>
-          )
-        })}</ul>
-        <h2>Author</h2>
-        <p className="page-content">{recipe.author}</p>
+      <div className="recipe-content">
+        <img src={recipe.img} ></img>
+        <div className="recipe-info">
+          <h2>Description</h2>
+          <p className="page-content">{recipe.body}</p>
+          <h2>Ingredients</h2>
+          <ul className="page-content">
+            {recipe.seperatedIngredients.map((ingredient) => {
+                return (
+                  <li>
+                    {ingredient}
+                  </li>
+              )
+            })}</ul>
+            <h2>Author</h2>
+            <p className="page-content">{recipe.author}</p>
+        </div>
+        </div>
       <div className="page-footer">
         <form method="post">
           <input type="hidden" name="_method" value="delete" />

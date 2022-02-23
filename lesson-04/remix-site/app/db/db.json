@@ -74,6 +74,18 @@
       ],
       "author": "Magda",
       "img": "https://www.kwestiasmaku.com/sites/v123.kwestiasmaku.com/files/curry_ramen_01.jpg"
+    },
+    {
+      "id": "17f2653bdd0",
+      "title": "Sandwich",
+      "body": "This is a sandwich hihihihiihihi",
+      "seperatedIngredients": [
+        "bread",
+        " lettuce",
+        " cheese"
+      ],
+      "author": "Kasia",
+      "img": "https://assets.epicurious.com/photos/5d3770225c5cb8000935d1db/6:4/w_3272,h_2181,c_limit/crispy-green-goddess-sandwich-recipe-BA-071119.jpg"
     }
   ]
 }
