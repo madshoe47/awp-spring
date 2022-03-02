@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "title": "Hair brush",
+      "description": "A decent size.",
+      "img": "https://cdn.nicehair.dk/products/90111/tangle-teezer-fine--fragile-hair-brush-pink-dawn-1605704251.jpg",
+      "price": "70",
+      "rating": "4.2"
+    },
+    {
+      "id": "3",
+      "title": "Blush456",
+      "description": "Peach color",
+      "img": "https://img01.ztat.net/article/spp-media-p1/5bdab9fa53194146b8b6980ae6a7c1a9/0214a5a789eb4da385cc10667d144868.jpg?imwidth=1800&filter=packshot",
+      "price": "100",
+      "rating": "2"
+    },
+    {
+      "id": "17f4a4ef292",
+      "title": "NARS Concealer",
+      "description": "Beige 01 - Full coverage",
+      "img": "https://static.thcdn.com/images/large/original//productimg/1600/1600/10785711-2014927585578942.jpg",
+      "price": "120"
+    },
+    {
+      "id": "17f4a4ff581",
+      "title": "Gua Sha",
+      "description": "Face sculpting stone",
+      "img": "https://yogastore.dk/wp-content/uploads/2020/06/Rosa_guasha.jpg",
+      "price": "210"
+    }
+  ]
+}
