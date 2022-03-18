@@ -1,0 +1,50 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// The current database to use.
+use('test');
+
+db.books.insertOne(
+  {"reviews" : [{
+    "author" : "Jan Pupik",
+    "description" : "This is the most entertaining book I've ever read.",
+    "starRating" : 5,
+  }], 
+  "categories" : ["Contemporary Fiction"], 
+  "publisher" : "vintage publishing",
+  "publicationDate" : new Date("2006-05-01"), 
+  "language" : "English", 
+  "ratingsCount" : 534350, 
+  "starrating" : 4.19, 
+  "description" : "Every weekend, in basements and parking lots across the country, young men with good white-collar jobs and absent fathers take off their shoes and shirts and fight each other barehanded for as long as they have to. Then they go back to those jobs with blackened eyes and loosened teeth and the sense that they can handle anything. Fight Club is the invention of Tyler Durden, projectionist, waiter and dark, anarchic genius. And it's only the beginning of his plans for revenge on a world where cancer support groups have the corner on human warmth.", 
+  "title" : "White Teeth", 
+  "author" : "Michael Crichton", 
+  "price" : 111.56, 
+  "currency" : "DKK", 
+  "isbn13" : "9781784752224",}
+);
+
+
+// Search for documents in the current collection.
+db.getCollection('books')
+  .find(
+    {
+      /*
+      * Filter
+      * fieldA: value or expression
+      */
+    },
+    {
+      /*
+      * Projection
+      * _id: 0, // exclude _id
+      * fieldA: 1 // include field
+      */
+    }
+  )
+  .sort({
+    /*
+    * fieldA: 1 // ascending
+    * fieldB: -1 // descending
+    */
+  });
