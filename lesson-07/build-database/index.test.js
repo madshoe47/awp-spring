@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 
-const DATABASE_NAME = "shop";
+const DATABASE_NAME = "test";
 const COLLECTION_NAME = "books";
 
 // All books borrowed from here: https://www.bookdepository.com/back-to-the-90s
