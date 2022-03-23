@@ -36,6 +36,9 @@ export default function App() {
           <Link to="/" className="hover:underline text-blue-600">
             Home
           </Link>
+          <Link to="/books/new" className="hover:underline text-blue-600">
+            New Book
+          </Link>
         </header>
         <Outlet />
         <ScrollRestoration />

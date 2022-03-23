@@ -20,7 +20,10 @@ const bookSchema = new Schema({
       starRating: Number,
     },
   ],
-  title: String,
+  title: {
+    type: String,
+    required: true,
+  },
 });
 
 export const models = [
