@@ -1,7 +1,11 @@
 import { json, redirect } from "@remix-run/node";
 import { Form, Link, useActionData } from "@remix-run/react";
 import bcrypt from "bcryptjs";
-import { getSession, commitSession } from "~/sessions.server.js";
+import {
+  getSession,
+  commitSession,
+  hasUserSession,
+} from "~/sessions.server.js";
 import connectDb from "~/db/connectDb.server.js";
 
 export async function action({ request }) {
@@ -11,12 +15,15 @@ export async function action({ request }) {
 
   if (form.get("password").trim() !== form.get("repeatPassword").trim()) {
     // TODO: Return a JSON response with an `errorMessage` about the passwords not matching. Status 400?
-    return null;
+    return json({ errorMessage: "Passwords don't match" }, { status: 400 });
   }
 
   if (form.get("password").trim()?.length < 8) {
     // TODO: Return a JSON response with an `errorMessage` about the password length. Status 400?
-    return null;
+    return json(
+      { errorMessage: "Passwords must be at least 8 characters" },
+      { status: 400 }
+    );
   }
 
   const hashedPassword = await bcrypt.hash(form.get("password").trim(), 10);
@@ -29,7 +36,12 @@ export async function action({ request }) {
     if (user) {
       session.set("userId", user._id);
       // TODO: Return a redirect to the home page which sets a cookie that commits the session
-      return null;
+      return redirect("/", {
+        headers: {
+          status: 200,
+          "Set-Cookie": await commitSession(session),
+        },
+      });
     } else {
       return json(
         { errorMessage: "User couldn't be created" },
@@ -50,6 +62,7 @@ export async function action({ request }) {
 
 export async function loader({ request }) {
   // TODO: Check if the session has a userId, and if so; redirect to the homepage
+  await hasUserSession(request);
   return null;
 }
 

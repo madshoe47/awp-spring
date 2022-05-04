@@ -15,4 +15,21 @@ async function requireUserSession(request) {
   return session;
 }
 
-export { getSession, commitSession, destroySession, requireUserSession };
+async function hasUserSession(request) {
+  const cookie = request.headers.get("Cookie");
+  const session = await getSession(cookie);
+
+  if (session.has("userId")) {
+    throw redirect("/");
+  }
+
+  return session;
+}
+
+export {
+  getSession,
+  commitSession,
+  destroySession,
+  requireUserSession,
+  hasUserSession,
+};
